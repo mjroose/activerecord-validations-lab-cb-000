@@ -7,6 +7,6 @@ class Post < ActiveRecord::Base
 
   def click_bait?
     t = title
-    !!t && (!!t.index("Won't Believe") || !!t.index("Secret") || !!t.index(/Top\s\d/) || !!t.index("Guess"))
+    !!t && !(!!t.index("Won't Believe") || !!t.index("Secret") || !!t.index(/Top\s\d/) || !!t.index("Guess"))
   end
 end
