@@ -6,7 +6,6 @@ class Post < ActiveRecord::Base
   validates :category, inclusion: { in: %w(Fiction Non-Fiction) }
 
   def click_bait?
-    binding.pry
     t = title
     !!t && (!!t.index("Won't Believe") || !!t.index("Secret") || !!t.index(/Top\s\d/) || !!t.index("Guess"))
   end
