@@ -8,6 +8,6 @@ class Post < ActiveRecord::Base
   def click_bait?
     binding.pry
     t = title
-    !!t.index("Won't Believe") || !!t.index("Secret") || !!t.index(/Top\s\d/) || !!t.index("Guess")
+    !!t && (!!t.index("Won't Believe") || !!t.index("Secret") || !!t.index(/Top\s\d/) || !!t.index("Guess"))
   end
 end
